@@ -2,9 +2,10 @@ name: caller workflow
 on:
  workflow_dispatch
 jobs:
-  call-workflow-passing-data:
+  build:
+    name: Pass input and secrets to my-action
     runs-on: ubuntu-latest
   steps:
-    uses: Moni0104/task2/.github/workflows/test2.yml@main
-    with:
-      username: monica
+    uses: Moni0104/task2/.github/workflows/task1.yml
+      with:
+      username: "monica"
