@@ -1,0 +1,18 @@
+name: invoking test workflow in test2 workflow
+on:
+  workflow_call:
+    inputs:
+      username:
+        required: true
+        type: string
+  jobs:
+    reusable_workflow_job:
+      runs-on: ubuntu-latest
+      environment: production
+      steps:
+        - uses: ./.github/workflows/test.yml
+          with:
+            username: ${{ inputs.username }}      
+  
+  
+  
