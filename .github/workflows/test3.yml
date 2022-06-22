@@ -1,0 +1,8 @@
+name: caller workflow
+on:
+  workflow-dispatch
+jobs:
+  call-workflow-passing-data:
+    uses: Moni0104/task2/.github/workflows/test2.yml@main
+    with:
+      username: monica
