@@ -1,7 +1,8 @@
 name: upload on s3 folder
 on:
   push:
-    - 's3/**'
+    paths:
+      - 's3/**'
     
 jobs:
   upload_s3:
