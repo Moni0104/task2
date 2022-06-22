@@ -1,11 +1,14 @@
-name: caller workflow
+name: Call a reusable workflow
+
 on:
- workflow_dispatch
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  build:
-    name: Pass input and secrets to my-action
-    runs-on: ubuntu-latest
-  steps:
-    uses: Moni0104/task2/.github/workflows/task1.yml
-      with: 
-      username: "monica"
+  call-workflow:
+    uses: Moni0104/task2/.github/workflows/test2@main
+
+ 
+    with:
+      username: monica
