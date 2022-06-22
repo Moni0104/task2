@@ -5,7 +5,7 @@ on:
       - 's3/**'
     
 jobs:
-  upload_s3:
+  build:
     strategy:
       matrix:
         include:
