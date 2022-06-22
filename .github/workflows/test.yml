@@ -1,0 +1,21 @@
+name: upload on s3 folder
+on:
+  push:
+    - 's3/**'
+    
+jobs:
+  upload_s3:
+    runs-on: [ '${{matrix.runner}}']
+    strategy:
+      matrix:
+        include:
+          - environment: testing
+            runner: ubuntu-latest
+          - environment: production
+            runner: ubuntu-18.04
+  steps:
+    - uses: actions/checkout@v1
+      run: echo 'running on test and production'
+        
+    
+     
