@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
   steps:
     uses: Moni0104/task2/.github/workflows/task1.yml
-      with:
+      with: 
       username: "monica"
