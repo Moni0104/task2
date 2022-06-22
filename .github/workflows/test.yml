@@ -6,7 +6,6 @@ on:
     
 jobs:
   upload_s3:
-    runs-on: [ '${{matrix.runner}}']
     strategy:
       matrix:
         include:
@@ -14,9 +13,8 @@ jobs:
             runner: ubuntu-latest
           - environment: production
             runner: ubuntu-18.04
-  steps:
+    runs-on: [ '${{matrix.runner}}']
+    steps:
     - uses: actions/checkout@v1
+    - name: run the workflow  
       run: echo 'running on test and production'
-        
-    
-     
