@@ -1,4 +1,4 @@
-name: upload on s3 folder
+name: playing with matrix
 on:
   push:
     paths:
