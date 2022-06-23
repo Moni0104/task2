@@ -4,16 +4,19 @@ on:
   workflow_call:
     inputs:
       username:
-        required: true
+        description: 'A username passed from the caller workflow'
+        default: 'john-doe'
+        required: false
         type: string
+
 jobs:
-  example_job:
-    name: Pass input and secrets to my-action
+  print-username:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: ./github/workflows/test3.yml
-        with:
-          username: ${{ inputs.username }}     
+      - name: Print the input name to STDOUT
+        run: echo The username is ${{ inputs.username }}
+          
   
   
   
